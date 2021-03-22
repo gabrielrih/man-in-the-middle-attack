@@ -6,7 +6,7 @@ It allow to execute a man in the middle attack into a LAN.
 - The other scripts you can run after to do some cool things.
 
 ## Starting attack
-Usage arpspoofing.sh:
+Usage:
 ```shell
 ./arpspoofing.sh [interface] [IP target] [IP gateway] [IP network]
 ```
