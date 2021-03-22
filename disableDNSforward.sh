@@ -1,30 +1,27 @@
 #!/bin/bash
 #
-# blocksites-v1.sh
-#
-# Using arpspoofing, you can execute this to block HTTP and HTTPS access to some sites
+# Using arpspoofing, you can execute this to disable DNS calls to some sites
 #
 # Gabriel Richter       <gabrielrih@gmail.com>
-# Creation Date:        2017-03-17
+# Creation Date:        2016-08-25
 # Last Modification:    2017-03-17
 #
 
 # USE
-use="USAGE: $0 [option] [site or file] [port]
+use="USAGE: $0 [option] [site or file]
 
-	Parameters:
+	Onde:
 	[option]	1. Enter a site name; 2. Enter sites file list
 	[site or file]
 			If option = 1 enter site name.
 			If option = 2 enter sites file list.
-        [port]          Enter port to block.
 	
 	Examples:
-	$0 1 www.facebook.com 443
-	$0 2 arquivo.host 80"
+	$0 1 www.facebook.com
+	$0 2 arquivo.host"
 
 # Check parameters
-if [ $# != 3 ]
+if [ $# != 2 ]
 then
 	echo "$use";
 	exit 1;
@@ -34,13 +31,12 @@ fi
 option=$1
 site=$2
 fileList=$2
-port=$3
 
 # Check if option is SITE
 if [ $option == 1 ]
 then
-	iptables -A FORWARD -p udp --dport $port -d $site -j DROP
-	iptables -A FORWARD -p tcp --dport $port -d $site -j DROP
+	iptables -A FORWARD -p udp --dport 53 -d $site -j DROP
+	iptables -A FORWARD -p tcp --dport 53 -d $site -j DROP
 
 # Check if option is LIST FILE
 elif [ $option == 2 ]
@@ -57,8 +53,8 @@ then
 
 	for i in `cat $fileList`
 	do
-		iptables -A FORWARD -p udp --dport $port -d $i -j DROP
-		iptables -A FORWARD -p tcp --dport $port -d $i -j DROP
+		iptables -A FORWARD -p udp --dport 53 -d $i -j DROP
+		iptables -A FORWARD -p tcp --dport 53 -d $i -j DROP
 	done
 
 else

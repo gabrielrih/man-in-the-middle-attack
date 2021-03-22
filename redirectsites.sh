@@ -1,7 +1,5 @@
 #!/bin/bash
 #
-# redirectsites-v2.sh
-#
 # Redirect sites to another host/port
 #
 # Gabriel Richter       <gabrielrih@gmail.com>

@@ -1,7 +1,5 @@
 #!/usr/bin/python
 #
-# sendarp.py
-#
 # Descricao: A funcionalidade basica desse software eh enviar 
 # continuamente pacotes ARP para um determinado alvo (pode ser em broadcast tambem).
 # A vantagem eh que se pode, por exemplo, configurar para o software enviar os

@@ -1,15 +1,12 @@
 #!/bin/bash
 #
-# dnsspoofing-v1.sh
-#
-# Com o ARP Spoofing funcionando, esse script irá descartar
-# todos os pacotes UDP e TCP com destino a porta 53 e irá
+# Com o ARP Spoofing funcionando, esse script irÃ¡ descartar
+# todos os pacotes UDP e TCP com destino a porta 53 e irÃ¡
 # realizar um ataque de DNS spoofing redirecionando o alvo
 # para sites diferentes dos requisitos.
 #
 # Daniel Tomm
 # Gabriel Richter
-#
 #
 # Data Criacao:		22-09-2015
 # Data Modificacao:	29-09-2015
@@ -26,7 +23,7 @@ use="USO: $0 [interface] [arquivo host]
 	$0 eth0 arquivo.host
 "
 
-# Se não recebeu 3 parametros finaliza script
+# Se nï¿½o recebeu 3 parametros finaliza script
 if [ $# != 2 ]
 then
 	echo "$use";
@@ -37,7 +34,7 @@ fi
 interface=$1
 host=$2
 
-# Bloqueia solicitação DNS porta udp e tcp
+# Bloqueia solicitacao DNS porta udp e tcp
 #iptables -A FORWARD -p udp --dport 53 -j DROP
 #iptables -A FORWARD -p tcp --dport 53 -j DROP
 

@@ -1,7 +1,5 @@
 #!/bin/bash
 #
-# arpspoofing-v2.sh 
-#
 # ARP Spoofing attack
 # OBS: Protection tools: ARPWatch, ARPON and XAr.
 #
