@@ -5,7 +5,7 @@ It allow to execute a man in the middle attack into a LAN.
 - You can run the "arpspoofing.sh" first to execute a man in the middle attack.
 - The other scripts you can run after to do some cool things.
 
-## Starting attack
+## Starting the attack
 Usage:
 ```shell
 ./arpspoofing.sh [interface] [IP target] [IP gateway] [IP network]
